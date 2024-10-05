@@ -1,14 +1,12 @@
 FROM node:latest
 
-WORKDIR /user/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
 RUN npm install
 
-COPY ..
-
-RUN npx tsc -b
+COPY . .
 
 EXPOSE 3000
 
